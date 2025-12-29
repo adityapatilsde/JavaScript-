@@ -7,7 +7,6 @@ let username;
 username = window.prompt("What ur username");
 console.log(username);
 
-//2.
 let username1;
 document.getElementById("mysubmit").onclick = function() {
     username = document.getElementById("mytext").value;
