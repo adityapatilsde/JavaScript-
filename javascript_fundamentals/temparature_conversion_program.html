@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="temparature_conversion_program.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h1>Temparature Coversion</h1>
+        <input type="number" id="textbox" value="0"><br>
+
+        <input type="radio" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit">Celsius ➡️ Fahrenheit</label><br>
+
+        <input type="radio" id="toCelsius" name="unit">
+        <label for="toFahrenheit">Fahrenheit ➡️ Celsius</label><br>
+
+        <button type="button" onclick="convert()">Submit</button>
+        <p id="result">Select a unit</p>
+
+
+    </form>
+    <!--The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.-->
+
+
+    <script src="temparature_conversion_program.js"></script>
+</body>
+</html>

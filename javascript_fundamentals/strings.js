@@ -77,3 +77,19 @@ console.log(phonenumber);
 /*replaces all the - dashes with nothing the first charecter in
 bracket you type will be replaced from the next one */
 //=========================================================================
+//CODE 8
+
+/* string slicing =  creating a substring from a 
+portion of amother string 
+string.slice(start, end)*/
+
+const fullnamee = "Bois Code";
+let firstname = fullnamee.slice(0,4);
+let lastname = fullnamee.slice(5,9);
+console.log(firstname);
+console.log(lastname);
+
+let first = "Broseph Code";
+let last = first.slice(0,first.indexOf(" "));
+console.log(last);
+
