@@ -1,9 +1,19 @@
 /* spread operator = ...allows an iterable suach as 
 an array or string to be explained into seperate 
 elements (unpacks the element) */
+//CODE 1.
 
-let numbers = [1,2,3,4,5];
-let maximum = Math.max(...numbers);
-let minimum = m
+let username = "Bro code";
+let letters = [...username].join("-");
+console.log(letters);
 
-console.log(maximum);
+//================================================================
+//CODE 2. 
+
+let fruits = ["apple" , "orange" , "banana"];
+let vegetables = ["carrots" , "tomatoes" , "ladyfinger"];
+let food = [...fruits, ...vegetables, "eggs" , "milk"];
+
+console.log(food);
+
+//=================================================================
