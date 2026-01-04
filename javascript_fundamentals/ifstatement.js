@@ -18,7 +18,7 @@ if(time < 12 ){
     console.log("Good Morning");
 }
 else{
-    console.log("Good Afternoon");
+    console.log("Good evening");
 }
 
 //==============================================================================
