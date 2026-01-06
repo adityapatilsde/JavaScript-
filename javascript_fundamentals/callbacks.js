@@ -21,7 +21,7 @@ function wait(){
     console.log("Wait");
 }
 function leave(){
-    console.log("Leave");
+    console.log("move on");
 }
 function goodbye(){
     console.log("Goodbye");
