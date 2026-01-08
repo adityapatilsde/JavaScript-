@@ -38,7 +38,7 @@ function sum(callback, x , y){
 }
 
 function displayConsole(result){
-    console.log(result);
+    console.log(results);
 }
 
 
