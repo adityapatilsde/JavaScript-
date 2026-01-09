@@ -28,6 +28,6 @@ const product3 = new product("Underwear", 100.00);
 product3.displayproduct();
 
 const total = product3.calculateTotal(salesTax);
-console.log(`Total price (with tax): $${total.toFixed(2)}`);
+console.log(`Total costprice (with tax): $${total.toFixed(2)}`);
 
 
