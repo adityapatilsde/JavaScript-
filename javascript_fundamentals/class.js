@@ -11,7 +11,7 @@ class product{
 
     displayproduct(){
         console.log(`Product: ${this.name}`);
-        console.log(`price: $${this.price.toFixed(2)}`);
+        console.log(`rate: $${this.price.toFixed(2)}`);
     }
 
     calculateTotal(salesTax){
