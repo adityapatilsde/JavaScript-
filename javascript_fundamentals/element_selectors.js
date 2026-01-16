@@ -21,9 +21,9 @@ console.log(myHeadings);
 //CODE 2 
 
 const fruits = document.getElementsByClassName("fruits");
-fruits[0].style.backgroundColor = "yellow";
+fruits[0].style.backgroundColor = "blue";
 for(let fruit of fruits){
-    fruit.style.backgroundColor = "yellow";
+    fruit.style.backgroundColor = "blue";
 }
 
 
