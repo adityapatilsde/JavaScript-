@@ -3,7 +3,7 @@
 //     ex: 11 = x + 5; here + is operator and 11,x and 5 is operand
 
 let student = 30;
-student = student + 1;  // Additionn
+student = student + 1;  // plus addition
 student = student * 2;  // multiplication
 student = student - 2;  // subtraction
 student = student ** 2; // exponential
