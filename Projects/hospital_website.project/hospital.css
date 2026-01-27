@@ -1,7 +1,7 @@
 #text20{
     display: flex;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-size: 3rem;
     font-weight: bold;
 }
