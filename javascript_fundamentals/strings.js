@@ -13,7 +13,7 @@ so BROCODE   ==
 //====================================================================
 //CODE 2
 
-let user = "Brosis";
+let user = "Broisis";
 console.log(user.length);
  
 /* in code 2 our output is 6 because .length property 
