@@ -26,8 +26,9 @@ class Hawk extends Animal {
     }
 }
 
-const rabbit = new Rabbit("rabbit", 1, 25);
+
 const fish = new Fish("fish", 2, 12);
+const rabbit = new Rabbit("rabbit", 1, 25);
 const hawk = new Hawk("hawk", 3, 50);
 
 console.log(rabbit.name);
