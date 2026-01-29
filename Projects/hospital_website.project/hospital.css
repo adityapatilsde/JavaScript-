@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    background-color: lightblue;
 }
 h1{
     text-align: center;
@@ -30,4 +31,66 @@ h1{
 }
 .navbar li{
     float: left;
+}
+.backvideo{
+    margin-bottom: 20px;
+     width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.whyAmh{
+  /*  background-color: lightblue; */
+}
+.whyAmh h2{
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black
+}
+.whyAmh img{
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    border: 8px solid lightblue;
+    border-radius: 20px;
+}
+.whyAmh h3{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    margin-bottom: 0;
+    
+}
+.docVideo{
+    display: block;
+    margin: 15px auto;
+    width: 60%;
+    height: 60vh;
+    overflow: hidden;
+}
+}
+.advTech img{
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    border: 8px solid lightblue;
+    border-radius: 20px;
+}
+.advTech h3{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    margin-bottom: 0;
+}
+.techVideo{
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 10px;
+     width: 60%;
+    height: 60vh;
+    overflow: hidden;
 }
