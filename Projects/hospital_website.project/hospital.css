@@ -149,3 +149,13 @@ h1{
 .accordion i{
     font-size: 1.6rem;
 }
+#searchBar{
+    display: flex;
+    margin: 20px auto ;
+    padding: 10px 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
