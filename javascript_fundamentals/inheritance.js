@@ -53,6 +53,38 @@ hawk.eat();
 hawk.sleeo();
 hawk.fly();
 
+//CODE 2.
+
+
+// Parent class
+class Employee {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    showDetails() {
+        console.log(`Name: ${this.name}, Salary: ${this.salary}`);
+    }
+}
+
+// Child class
+class Manager extends Employee {
+    constructor(name, salary, department) {
+        super(name, salary);     // calling parent constructor
+        this.department = department;
+    }
+
+    showManager() {
+        console.log(`${this.name} manages ${this.department} department.`);
+    }
+}
+
+// Object of child class
+let m1 = new Manager("Amit", 50000, "IT");
+
+m1.showDetails();   // inherited method
+m1.showManager();  
 
 
 
