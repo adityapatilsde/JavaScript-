@@ -86,6 +86,38 @@ let m1 = new Manager("Amit", 50000, "IT");
 m1.showDetails();   // inherited method
 m1.showManager();  
 
+//CODE 3 
+
+// Parent class
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+
+// Child class
+class Dog extends Animal {
+
+    // overriding parent method
+    speak() {
+        console.log(`${this.name} barks 🐶`);
+    }
+
+    run() {
+        console.log(`${this.name} is running fast!`);
+    }
+}
+
+let d1 = new Dog("Tommy");
+
+d1.speak();   // overridden method
+d1.run();     // own method
+
+
 
 
 
