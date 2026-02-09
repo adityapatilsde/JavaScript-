@@ -117,6 +117,38 @@ let d1 = new Dog("Tommy");
 d1.speak();   // overridden method
 d1.run();     // own method
 
+//CODE 4
+
+// Parent class
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+
+    showColor() {
+        console.log("Color is: " + this.color);
+    }
+}
+
+// Child class
+class Rectangle extends Shape {
+    constructor(color, length, breadth) {
+        super(color);          // call parent constructor
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    area() {
+        return this.length * this.breadth;
+    }
+}
+
+// Creating object of child class
+let r1 = new Rectangle("Blue", 10, 5);
+
+r1.showColor();           // inherited method
+console.log(r1.area());   // own method
+
 
 
 
