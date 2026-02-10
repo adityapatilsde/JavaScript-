@@ -149,6 +149,41 @@ let r1 = new Rectangle("Blue", 10, 5);
 r1.showColor();           // inherited method
 console.log(r1.area());   // own method
 
+// CODE 6
+
+// Grandparent class
+class Vehicle {
+    constructor(brand) {
+        this.brand = brand;
+    }
+
+    showBrand() {
+        console.log("Brand: " + this.brand);
+    }
+}
+
+// Parent class
+class Car extends Vehicle {
+    constructor(brand, model) {
+        super(brand);
+        this.model = model;
+    }
+
+    showModel() {
+        console.log("Model: " + this.model);
+    }
+}
+
+// Child class
+class ElectricCar extends Car {
+    constructor(brand, model, battery) {
+        super(brand, model);
+        this.battery = battery;
+    }
+
+    showBattery() {
+        console.log("Battery: " +
+
 
 
 
