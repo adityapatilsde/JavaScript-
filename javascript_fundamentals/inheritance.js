@@ -183,6 +183,39 @@ class ElectricCar extends Car {
 
     showBattery() {
         console.log("Battery: " +
+        }
+
+
+        //code 7
+
+        // Parent class
+class User {
+    constructor(username) {
+        this.username = username;
+    }
+
+    login() {
+        console.log(this.username + " has logged in.");
+    }
+}
+
+// Child class
+class Teacher extends User {
+    constructor(username, subject) {
+        super(username);     // call parent constructor
+        this.subject = subject;
+    }
+
+    teach() {
+        console.log(this.username + " is teaching " + this.subject);
+    }
+}
+
+// Object creation
+let t1 = new Teacher("Aditya", "JavaScript");
+
+t1.login();   // inherited method
+t1.teach();   // child’s own method
 
 
 
