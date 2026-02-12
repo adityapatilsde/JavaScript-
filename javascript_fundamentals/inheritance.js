@@ -217,6 +217,46 @@ let t1 = new Teacher("Aditya", "JavaScript");
 t1.login();   // inherited method
 t1.teach();   // child’s own method
 
+//CODE 8
+
+// Parent class
+class BankAccount {
+    constructor(accountHolder, balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+        console.log("Deposited: " + amount);
+    }
+
+    showBalance() {
+        console.log("Balance: " + this.balance);
+    }
+}
+
+// Child class
+class SavingsAccount extends BankAccount {
+    constructor(accountHolder, balance, interestRate) {
+        super(accountHolder, balance);
+        this.interestRate = interestRate;
+    }
+
+    addInterest() {
+        let interest = this.balance * this.interestRate / 100;
+        this.balance += interest;
+        console.log("Interest added: " + interest);
+    }
+}
+
+// Create object
+let acc1 = new SavingsAccount("Aditya", 10000, 5);
+
+acc1.deposit(2000);     // inherited method
+acc1.addInterest();     // own method
+acc1.showBalance();     // inherited method
+
 
 
 
