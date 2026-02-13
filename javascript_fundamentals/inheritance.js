@@ -257,6 +257,34 @@ acc1.deposit(2000);     // inherited method
 acc1.addInterest();     // own method
 acc1.showBalance();     // inherited method
 
+//CODE 9
+// Parent class
+class GameCharacter {
+    constructor(name, health) {
+        this.name = name;
+        this.health = health;
+    }
+
+    attack() {
+        console.log(this.name + " attacks!");
+    }
+}
+
+// Child class
+class Warrior extends GameCharacter {
+    constructor(name, health, weapon) {
+        super(name, health);   // call parent constructor
+        this.weapon = weapon;
+    }
+
+    showWeapon() {
+        console.log(this.name + " uses " + this.weapon);
+    }
+}
+
+// Create object
+let w1 = new Warri
+
 
 
 
