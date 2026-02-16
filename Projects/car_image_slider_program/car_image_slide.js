@@ -40,3 +40,36 @@ function nextSlide(){
    slideIndex++;
    showSlide(slideIndex);
 }
+
+//CODE 11
+
+// Parent class
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    getDetails() {
+        console.log(this.title + " by " + this.author);
+    }
+}
+
+// Child class
+class EBook extends Book {
+    constructor(title, author, fileSize) {
+        super(title, author);   // call parent constructor
+        this.fileSize = fileSize;
+    }
+
+    download() {
+        console.log("Downloading " + this.title + 
+                    " (" + this.fileSize + "MB)");
+    }
+}
+
+// Create object
+let b1 = new EBook("JavaScript Basics", "Aditya", 5);
+
+b1.getDetails();   // inherited method
+b1.download();     // child method
