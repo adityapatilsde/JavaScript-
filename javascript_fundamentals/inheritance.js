@@ -282,8 +282,36 @@ class Warrior extends GameCharacter {
     }
 }
 
+// Parent class
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    getPrice() {
+        return this.price;
+    }
+}
+
+// Child class
+class DiscountedProduct extends Product {
+    constructor(name, price, discount) {
+        super(name, price);   // call parent constructor
+        this.discount = discount; // in percentage
+    }
+
+    // overriding method
+    getPrice() {
+        let discountedPrice = this.price - (this.price * this.discount / 100);
+        return discountedPrice;
+    }
+}
+
 // Create object
-let w1 = new Warri
+let item = new DiscountedProduct("Laptop", 50000, 10);
+
+console.log("Final Price: " + item.getPrice());
 
 
 
