@@ -57,3 +57,23 @@ walkDog().then(value => {console.log(value); return cleanKitchen()})
          .then(value => {console.log(value); return takeOutTrash()})
          .then(value => {console.log(value); console.log("You finished all the chores")})
          .catch(error => console.error(error));
+
+         //=================================================================
+
+         let myPromise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    if (success) {
+        resolve("Task completed successfully!");
+    } else {
+        reject("Task failed!");
+    }
+});
+
+myPromise
+    .then(function(result) {
+        console.log(result);   // If resolved
+    })
+    .catch(function(error) {
+        console.log(error);    // If rejected
+    });
