@@ -77,3 +77,26 @@ myPromise
     .catch(function(error) {
         console.log(error);    // If rejected
     });
+
+    //code ================================================================
+
+    function loginUser(username, password) {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if (username === "admin" && password === "1234") {
+                resolve("Login successful!");
+            } else {
+                reject("Invalid username or password!");
+            }
+        }, 1500);
+    });
+}
+
+loginUser("admin", "1234")
+    .then(function(message) {
+        console.log(message);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
