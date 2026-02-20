@@ -100,3 +100,27 @@ loginUser("admin", "1234")
         console.log(error);
     });
 
+
+    //Codeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+    function downloadFile(fileSize) {
+    return new Promise(function(resolve, reject) {
+        console.log("Downloading file...");
+
+        setTimeout(function() {
+            if (fileSize <= 100) {
+                resolve("Download completed successfully!");
+            } else {
+                reject("File size too large. Download failed.");
+            }
+        }, 2000);
+    });
+}
+
+downloadFile(80)
+    .then(function(message) {
+        console.log(message);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
