@@ -124,3 +124,44 @@ downloadFile(80)
     .catch(function(error) {
         console.log(error);
     });
+    //code =====================================================================
+
+    function placeOrder() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Order placed");
+        }, 1000);
+    });
+}
+
+function makePayment() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Payment successful");
+        }, 1000);
+    });
+}
+
+function deliverOrder() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve("Order delivered");
+        }, 1000);
+    });
+}
+
+placeOrder()
+    .then(function(message) {
+        console.log(message);
+        return makePayment();
+    })
+    .then(function(message) {
+        console.log(message);
+        return deliverOrder();
+    })
+    .then(function(message) {
+        console.log(message);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
