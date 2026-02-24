@@ -71,3 +71,47 @@ bankAccount.checkBalance();
 bankAccount.deposit(2000);
 bankAccount.withdraw(3000);
 bankAccount.checkBalance();
+
+//code3 =====================================================================================
+
+const student = {
+  name: "Aditya Patil",
+  rollNo: 101,
+  marks: 75,
+
+  // Add marks
+  addMarks(score) {
+    if (score > 0) {
+      this.marks += score;
+      console.log(`${score} marks added successfully.`);
+    } else {
+      console.log("Marks should be positive.");
+    }
+  },
+
+  // Reduce marks
+  deductMarks(score) {
+    if (score > 0 && score <= this.marks) {
+      this.marks -= score;
+      console.log(`${score} marks deducted successfully.`);
+    } else {
+      console.log("Invalid marks deduction.");
+    }
+  },
+
+  // Check result
+  checkResult() {
+    console.log(`Total Marks: ${this.marks}`);
+    if (this.marks >= 40) {
+      console.log("Status: Pass ✅");
+    } else {
+      console.log("Status: Fail ❌");
+    }
+  }
+};
+
+// Using the object
+student.checkResult();
+student.addMarks(10);
+student.deductMarks(20);
+student.checkResult();
