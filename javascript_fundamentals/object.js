@@ -115,3 +115,55 @@ student.checkResult();
 student.addMarks(10);
 student.deductMarks(20);
 student.checkResult();
+
+
+//===============================================================================
+
+const studentManager = {
+  students: [],
+
+  // Add new student
+  addStudent(name, marks) {
+    const student = {
+      id: this.students.length + 1,
+      name: name,
+      marks: marks,
+      passed: marks >= 40
+    };
+
+    this.students.push(student);
+    console.log(`${name} added successfully.`);
+  },
+
+  // Get all students
+  getAllStudents() {
+    console.log("Student List:");
+    this.students.forEach(student => {
+      console.log(
+        `ID: ${student.id}, Name: ${student.name}, Marks: ${student.marks}, Passed: ${student.passed}`
+      );
+    });
+  },
+
+  // Get topper
+  getTopper() {
+    let topper = this.students[0];
+
+    for (let i = 1; i < this.students.length; i++) {
+      if (this.students[i].marks > topper.marks) {
+        topper = this.students[i];
+      }
+    }
+
+    console.log(`Topper is ${topper.name} with ${topper.marks} marks.`);
+  }
+};
+
+
+// Using the object
+studentManager.addStudent("Aditya", 85);
+studentManager.addStudent("Rahul", 67);
+studentManager.addStudent("Sneha", 92);
+
+studentManager.getAllStudents();
+studentManager.getTopper();
