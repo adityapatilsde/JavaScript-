@@ -167,3 +167,59 @@ studentManager.addStudent("Sneha", 92);
 
 studentManager.getAllStudents();
 studentManager.getTopper();
+
+//=========================================================================================
+
+const shoppingCart = {
+  items: [],
+
+  // Add item to cart
+  addItem(name, price, quantity = 1) {
+    const existingItem = this.items.find(item => item.name === name);
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+      console.log(`${name} quantity updated.`);
+    } else {
+      this.items.push({ name, price, quantity });
+      console.log(`${name} added to cart.`);
+    }
+  },
+
+  // Remove item
+  removeItem(name) {
+    this.items = this.items.filter(item => item.name !== name);
+    console.log(`${name} removed from cart.`);
+  },
+
+  // Calculate total price
+  getTotal() {
+    let total = 0;
+    this.items.forEach(item => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  },
+
+  // Display cart
+  displayCart() {
+    console.log("Cart Items:");
+    this.items.forEach(item => {
+      console.log(
+        `${item.name} - ₹${item.price} x ${item.quantity}`
+      );
+    });
+    console.log("Total: ₹" + this.getTotal());
+  }
+};
+
+
+// Using the object
+shoppingCart.addItem("Laptop", 50000, 1);
+shoppingCart.addItem("Mouse", 500, 2);
+shoppingCart.addItem("Mouse", 500, 1); // Updates quantity
+
+shoppingCart.displayCart();
+
+shoppingCart.removeItem("Mouse");
+shoppingCart.displayCart();
