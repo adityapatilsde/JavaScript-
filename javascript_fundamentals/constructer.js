@@ -17,3 +17,16 @@ const car3 = new Car("Dodge", "Charger", 2026, "silver");
 car1.drive();
 car2.drive();
 car3.drive();
+
+//====================================================================
+
+function Student(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+let s1 = new Student("Aditya", 18);
+let s2 = new Student("Rahul", 19);
+
+console.log(s1.name);
+console.log(s2.age);
