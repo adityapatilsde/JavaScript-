@@ -47,3 +47,36 @@ let acc1 = new BankAccount("Aditya", 1000);
 acc1.deposit(500);
 
 console.log("Balance:", acc1.balance);
+
+//========================================================================
+
+function Library(name, books){
+    this.name = name;
+    this.books = books;
+
+    this.addBook = function(book){
+        this.books.push(book);
+    }
+
+    this.removeBook = function(book){
+        let index = this.books.indexOf(book);
+        if(index !== -1){
+            this.books.splice(index,1);
+        }
+    }
+
+    this.displayBooks = function(){
+        console.log("Library:", this.name);
+        console.log("Books:");
+        for(let i = 0; i < this.books.length; i++){
+            console.log(this.books[i]);
+        }
+    }
+}
+
+let lib = new Library("City Library", ["C++", "JavaScript", "Python"]);
+
+lib.addBook("Java");
+lib.removeBook("C++");
+
+lib.displayBooks();
