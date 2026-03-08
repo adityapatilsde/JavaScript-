@@ -30,3 +30,20 @@ let s2 = new Student("Rahul", 19);
 
 console.log(s1.name);
 console.log(s2.age);
+
+//===============================================================================
+
+function BankAccount(name, balance){
+    this.name = name;
+    this.balance = balance;
+
+    this.deposit = function(amount){
+        this.balance += amount;
+    }
+}
+
+let acc1 = new BankAccount("Aditya", 1000);
+
+acc1.deposit(500);
+
+console.log("Balance:", acc1.balance);
