@@ -12,4 +12,43 @@ function happybirthday(username,age){ //parameters
 happybirthday("digvijay" , 25);//arguments
 
 //=======================================================================
-        
+
+function birthdayboy(username,age){ 
+    console.log("Happy Birthday to you!");
+    console.log("Happy Birthday to you!");
+    console.log(`Happy Birthday dear ${username}!`);
+    console.log(`You are ${age} years old`);
+}
+
+birthdayboy("digvijay" , 25);
+//===============================================================
+
+function calculateTotal(m1, m2, m3) {
+    return m1 + m2 + m3;
+}
+
+function calculateAverage(total) {
+    return total / 3;
+}
+
+function displayResult(name, avg) {
+    console.log("Student Name: " + name);
+    console.log("Average Marks: " + avg);
+
+    if (avg >= 50) {
+        console.log("Result: Pass");
+    } else {
+        console.log("Result: Fail");
+    }
+}
+
+// main program
+let studentName = "Aditya";
+let mark1 = 85;
+let mark2 = 75;
+let mark3 = 90;
+
+let total = calculateTotal(mark1, mark2, mark3);
+let average = calculateAverage(total);
+
+displayResult(studentName, average);

@@ -29,3 +29,21 @@ console.log(`Bro is online: ${online}`);
 
 
 //======================================================================
+
+let a = 10;       
+let name = "Aditya"; 
+let student = true;  
+
+console.log(typeof a);
+console.log(typeof name);
+console.log(typeof student);
+
+//=================================================================================
+
+let num = 25;        // Number
+let text = "Hello";  // String
+let flag = false;    // Boolean
+
+console.log(num);
+console.log(text);
+console.log(flag);
