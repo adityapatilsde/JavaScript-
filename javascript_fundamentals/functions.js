@@ -52,3 +52,21 @@ let total = calculateTotal(mark1, mark2, mark3);
 let average = calculateAverage(total);
 
 displayResult(studentName, average);
+
+//================================================
+
+function calculator(a, b) {
+    let sum = a + b;
+    let difference = a - b;
+    let product = a * b;
+    let division = a / b;
+
+    console.log("First Number:", a);
+    console.log("Second Number:", b);
+    console.log("Addition:", sum);
+    console.log("Subtraction:", difference);
+    console.log("Multiplication:", product);
+    console.log("Division:", division);
+}
+
+calculator(20, 5);
