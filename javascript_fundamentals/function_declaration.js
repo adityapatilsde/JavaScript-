@@ -44,6 +44,35 @@ class CreditCardPayment extends Payment {
         console.log("Paid using card ending with " + this.cardNumber.slice(-4));
     }
 }
+//====================================================================================================
 
 // Create object
 let p1 = new CreditC
+let marks = [78, 85, 92, 67, 88];
+
+// function to calculate total
+function getTotal(arr) {
+    return arr.reduce(function(sum, mark) {
+        return sum + mark;
+    }, 0);
+}
+
+// function to calculate average
+function getAverage(arr) {
+    return getTotal(arr) / arr.length;
+}
+
+// function to find highest
+function getHighest(arr) {
+    return Math.max(...arr);
+}
+
+// function to find lowest
+function getLowest(arr) {
+    return Math.min(...arr);
+}
+
+console.log("Total Marks:", getTotal(marks));
+console.log("Average Marks:", getAverage(marks));
+console.log("Highest Marks:", getHighest(marks));
+console.log("Lowest Marks:", getLowest(marks));
