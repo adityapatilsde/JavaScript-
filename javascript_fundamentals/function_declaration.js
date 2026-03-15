@@ -76,3 +76,54 @@ console.log("Total Marks:", getTotal(marks));
 console.log("Average Marks:", getAverage(marks));
 console.log("Highest Marks:", getHighest(marks));
 console.log("Lowest Marks:", getLowest(marks));
+
+
+
+
+//==============================================================================
+
+// Function to create employee
+function createEmployee(name, salary, experience) {
+    return {
+        name: name,
+        salary: salary,
+        experience: experience
+    };
+}
+
+// Function to calculate bonus
+function calculateBonus(employee) {
+    let bonus = 0;
+
+    if (employee.experience >= 10) {
+        bonus = employee.salary * 0.20; // 20% bonus
+    } 
+    else if (employee.experience >= 5) {
+        bonus = employee.salary * 0.10; // 10% bonus
+    } 
+    else {
+        bonus = employee.salary * 0.05; // 5% bonus
+    }
+
+    return bonus;
+}
+
+// Function to display employee details
+function displayEmployee(employee) {
+    let bonus = calculateBonus(employee);
+
+    console.log("Employee Name:", employee.name);
+    console.log("Salary:", employee.salary);
+    console.log("Experience:", employee.experience, "years");
+    console.log("Bonus:", bonus);
+    console.log("Total Salary:", employee.salary + bonus);
+}
+
+// Creating employees
+let emp1 = createEmployee("Rahul", 50000, 6);
+let emp2 = createEmployee("Anita", 70000, 12);
+
+// Display details
+displayEmployee(emp1);
+console.log("-------------------");
+displayEmployee(emp2);
