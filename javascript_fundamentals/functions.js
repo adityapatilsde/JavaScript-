@@ -70,3 +70,36 @@ function calculator(a, b) {
 }
 
 calculator(20, 5);
+
+//======================================================================
+
+function calculateScore(kills, assists, deaths) {
+    let score = (kills * 10) + (assists * 5) - (deaths * 2);
+    return score;
+}
+
+function getRank(score) {
+    if (score >= 100) {
+        return "S Rank";
+    } else if (score >= 70) {
+        return "A Rank";
+    } else if (score >= 40) {
+        return "B Rank";
+    } else {
+        return "C Rank";
+    }
+}
+
+function playerReport(name, kills, assists, deaths) {
+    let score = calculateScore(kills, assists, deaths);
+    let rank = getRank(score);
+
+    console.log("Player: " + name);
+    console.log("Score: " + score);
+    console.log("Rank: " + rank);
+    console.log("-------------------");
+}
+
+// Function calls
+playerReport("Aditya", 8, 5, 2);
+playerReport("Rahul", 3, 2, 5);
