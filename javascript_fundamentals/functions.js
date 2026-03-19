@@ -103,3 +103,53 @@ function playerReport(name, kills, assists, deaths) {
 // Function calls
 playerReport("Aditya", 8, 5, 2);
 playerReport("Rahul", 3, 2, 5);
+
+//===========================================================
+
+// Function to create an employee
+function createEmployee(name, id, salary) {
+    return {
+        name: name,
+        id: id,
+        salary: salary
+    };
+}
+
+// Function to calculate bonus
+function calculateBonus(employee) {
+    return employee.salary * 0.10; // 10% bonus
+}
+
+// Function to calculate tax
+function calculateTax(employee) {
+    if (employee.salary > 50000) {
+        return employee.salary * 0.20; // 20% tax
+    } else {
+        return employee.salary * 0.10; // 10% tax
+    }
+}
+
+// Function to calculate net salary
+function calculateNetSalary(employee) {
+    let bonus = calculateBonus(employee);
+    let tax = calculateTax(employee);
+    return employee.salary + bonus - tax;
+}
+
+// Function to display employee details
+function displayEmployee(employee) {
+    console.log("----- Employee Details -----");
+    console.log("Name: " + employee.name);
+    console.log("ID: " + employee.id);
+    console.log("Salary: " + employee.salary);
+    console.log("Bonus: " + calculateBonus(employee));
+    console.log("Tax: " + calculateTax(employee));
+    console.log("Net Salary: " + calculateNetSalary(employee));
+}
+
+// Main Program
+let emp1 = createEmployee("Aditya", 101, 60000);
+let emp2 = createEmployee("Rahul", 102, 40000);
+
+displayEmployee(emp1);
+displayEmployee(emp2);
