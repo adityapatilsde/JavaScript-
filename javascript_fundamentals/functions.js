@@ -153,3 +153,45 @@ let emp2 = createEmployee("Rahul", 102, 40000);
 
 displayEmployee(emp1);
 displayEmployee(emp2);
+
+//======================================================================================================
+
+// Function to create employee
+function createEmployee(name, salary) {
+    return {
+        name: name,
+        salary: salary
+    };
+}
+
+// Function to calculate bonus
+function calculateBonus(salary) {
+    if (salary > 50000) {
+        return salary * 0.20;
+    } else {
+        return salary * 0.10;
+    }
+}
+
+// Function to calculate total salary
+function calculateTotalSalary(salary, bonus) {
+    return salary + bonus;
+}
+
+// Function to display employee details
+function displayEmployee(emp, bonus, totalSalary) {
+    console.log("Employee Name:", emp.name);
+    console.log("Base Salary:", emp.salary);
+    console.log("Bonus:", bonus);
+    console.log("Total Salary:", totalSalary);
+}
+
+// MAIN PROGRAM
+let emp1 = createEmployee("Aditya", 60000);
+
+let bonus = calculateBonus(emp1.salary);
+let totalSalary = calculateTotalSalary(emp1.salary, bonus);
+
+displayEmployee(emp1, bonus, totalSalary);
+
+//============================================================================================================
