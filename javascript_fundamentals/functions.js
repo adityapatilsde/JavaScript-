@@ -195,3 +195,24 @@ let totalSalary = calculateTotalSalary(emp1.salary, bonus);
 displayEmployee(emp1, bonus, totalSalary);
 
 //============================================================================================================
+
+function assignMission(soldierName, rank) {
+    if (rank === "Captain") {
+        return soldierName + " will lead the mission.";
+    } 
+    else if (rank === "Lieutenant") {
+        return soldierName + " will assist in planning.";
+    } 
+    else {
+        return soldierName + " will execute ground operations.";
+    }
+}
+
+// calling the function
+let s1 = assignMission("Arjun", "Captain");
+let s2 = assignMission("Vikram", "Lieutenant");
+let s3 = assignMission("Ravi", "Soldier");
+
+console.log(s1);
+console.log(s2);
+console.log(s3);
