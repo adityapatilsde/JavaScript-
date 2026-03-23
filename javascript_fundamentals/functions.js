@@ -216,3 +216,31 @@ let s3 = assignMission("Ravi", "Soldier");
 console.log(s1);
 console.log(s2);
 console.log(s3);
+
+//===========================================================================================
+
+function attackEnemy(soldierName, weapon, enemyHealth) {
+    let damage;
+
+    if (weapon === "Gun") {
+        damage = 30;
+    } else if (weapon === "Sniper") {
+        damage = 70;
+    } else {
+        damage = 15; // knife or basic attack
+    }
+
+    let remainingHealth = enemyHealth - damage;
+
+    return soldierName + " attacked with " + weapon + 
+           ". Enemy health left: " + remainingHealth;
+}
+
+// calling the function
+let attack1 = attackEnemy("Arjun", "Gun", 100);
+let attack2 = attackEnemy("Kabir", "Sniper", 100);
+let attack3 = attackEnemy("Ravi", "Knife", 100);
+
+console.log(attack1);
+console.log(attack2);
+console.log(attack3);
