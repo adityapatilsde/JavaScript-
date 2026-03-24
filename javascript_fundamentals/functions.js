@@ -244,3 +244,18 @@ let attack3 = attackEnemy("Ravi", "Knife", 100);
 console.log(attack1);
 console.log(attack2);
 console.log(attack3);
+
+//=============================================================================================================
+
+function supplyResources(unitName, soldiers, foodPerSoldier) {
+    let totalFood = soldiers * foodPerSoldier;
+
+    return "Unit " + unitName + " needs " + totalFood + " food packets.";
+}
+
+// calling the function
+let unit1 = supplyResources("Alpha", 10, 3);
+let unit2 = supplyResources("Bravo", 20, 2);
+
+console.log(unit1);
+console.log(unit2);
