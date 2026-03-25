@@ -259,3 +259,59 @@ let unit2 = supplyResources("Bravo", 20, 2);
 
 console.log(unit1);
 console.log(unit2);
+
+//=====================================================================================================
+
+// Function to create a bank account
+function createAccount(name, accountNumber, balance) {
+    return {
+        name: name,
+        accountNumber: accountNumber,
+        balance: balance
+    };
+}
+
+// Function to deposit money
+function deposit(account, amount) {
+    account.balance += amount;
+    console.log(amount + " deposited successfully.");
+}
+
+// Function to withdraw money
+function withdraw(account, amount) {
+    if (amount > account.balance) {
+        console.log("Insufficient balance!");
+    } else {
+        account.balance -= amount;
+        console.log(amount + " withdrawn successfully.");
+    }
+}
+
+// Function to check balance
+function checkBalance(account) {
+    console.log("Current Balance: " + account.balance);
+}
+
+// Function to display account details
+function displayAccount(account) {
+    console.log("----- Account Details -----");
+    console.log("Name: " + account.name);
+    console.log("Account No: " + account.accountNumber);
+    console.log("Balance: " + account.balance);
+}
+
+// Main Program
+let acc1 = createAccount("Aditya", 12345, 10000);
+
+// Operations
+displayAccount(acc1);
+
+deposit(acc1, 5000);
+checkBalance(acc1);
+
+withdraw(acc1, 3000);
+checkBalance(acc1);
+
+withdraw(acc1, 15000); // test insufficient balance
+
+displayAccount(acc1);
