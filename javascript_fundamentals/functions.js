@@ -315,3 +315,38 @@ checkBalance(acc1);
 withdraw(acc1, 15000); // test insufficient balance
 
 displayAccount(acc1);
+//========================================================================================
+
+function placeOrder(customerName, item, quantity) {
+    let price;
+
+    // menu pricing
+    if (item === "Burger") {
+        price = 50;
+    } else if (item === "Pizza") {
+        price = 100;
+    } else if (item === "Juice") {
+        price = 30;
+    } else {
+        price = 20; // default item
+    }
+
+    let total = price * quantity;
+
+    return generateBill(customerName, item, quantity, total);
+}
+
+function generateBill(name, item, qty, totalAmount) {
+    return "Customer: " + name +
+           "\nItem: " + item +
+           "\nQuantity: " + qty +
+           "\nTotal Bill: Rs." + totalAmount;
+}
+
+// calling functions
+let order1 = placeOrder("Aditya", "Pizza", 2);
+let order2 = placeOrder("Rahul", "Burger", 3);
+
+console.log(order1);
+console.log("------------");
+console.log(order2);
