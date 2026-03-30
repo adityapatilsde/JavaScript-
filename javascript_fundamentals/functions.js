@@ -350,3 +350,51 @@ let order2 = placeOrder("Rahul", "Burger", 3);
 console.log(order1);
 console.log("------------");
 console.log(order2);
+//==========================================================================
+
+function calculateTotal(item1, qty1, item2, qty2) {
+    let price1, price2;
+
+    // menu prices
+    if (item1 === "Burger") price1 = 50;
+    else if (item1 === "Pizza") price1 = 100;
+    else price1 = 30;
+
+    if (item2 === "Burger") price2 = 50;
+    else if (item2 === "Pizza") price2 = 100;
+    else price2 = 30;
+
+    let total = (price1 * qty1) + (price2 * qty2);
+
+    return applyDiscount(total);
+}
+
+function applyDiscount(total) {
+    let discount = 0;
+
+    if (total > 200) {
+        discount = total * 0.1; // 10% discount
+    }
+
+    let afterDiscount = total - discount;
+
+    return addGST(afterDiscount);
+}
+
+function addGST(amount) {
+    let gst = amount * 0.05; // 5% GST
+    let finalAmount = amount + gst;
+
+    return finalAmount;
+}
+
+function generateBill(name, finalAmount) {
+    return "Customer: " + name + 
+           "\nFinal Bill (with GST): Rs." + finalAmount;
+}
+
+// calling functions
+let total1 = calculateTotal("Pizza", 2, "Burger", 1);
+let bill1 = generateBill("Aditya", total1);
+
+console.log(bill1);
