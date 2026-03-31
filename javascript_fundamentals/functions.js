@@ -398,3 +398,42 @@ let total1 = calculateTotal("Pizza", 2, "Burger", 1);
 let bill1 = generateBill("Aditya", total1);
 
 console.log(bill1);
+//================================================================
+// =
+
+function takeOrder(customerName, item, qty) {
+    console.log("Order received from " + customerName);
+    let total = calculatePrice(item, qty);
+    return processPayment(customerName, total);
+}
+
+function calculatePrice(item, qty) {
+    let price;
+
+    if (item === "Sandwich") price = 40;
+    else if (item === "Coffee") price = 20;
+    else if (item === "Meal") price = 80;
+    else price = 30;
+
+    return price * qty;
+}
+
+function processPayment(name, amount) {
+    console.log("Processing payment of Rs." + amount);
+    
+    let paymentStatus = "Success"; // assume payment success
+
+    return generateReceipt(name, amount, paymentStatus);
+}
+
+function generateReceipt(name, amount, status) {
+    return "Customer: " + name +
+           "\nAmount Paid: Rs." + amount +
+           "\nPayment Status: " + status +
+           "\nOrder Status: Confirmed";
+}
+
+// calling functions
+let receipt1 = takeOrder("Aditya", "Meal", 2);
+
+console.log(receipt1);
