@@ -437,3 +437,41 @@ function generateReceipt(name, amount, status) {
 let receipt1 = takeOrder("Aditya", "Meal", 2);
 
 console.log(receipt1);
+//======================================================================
+
+let chickens = ["hen1", "hen2", "hen3"];
+
+// Function to add chicken
+function addChicken(name) {
+    chickens.push(name);
+    console.log(name + " added to farm");
+}
+
+// Function to sell chicken
+function sellChicken() {
+    let sold = chickens.pop();
+    console.log(sold + " sold from farm");
+}
+
+// Function to show all chickens
+function showChickens() {
+    console.log("Chickens in farm: " + chickens);
+}
+
+// Function to count chickens
+function countChickens() {
+    console.log("Total chickens: " + chickens.length);
+}
+
+
+// Operations
+showChickens();
+
+addChicken("hen4");
+addChicken("hen5");
+
+showChickens();
+
+sellChicken();
+
+countChickens();
