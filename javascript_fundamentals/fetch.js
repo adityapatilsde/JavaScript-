@@ -45,3 +45,47 @@ async function fetchData (){
 }
 
 //====================================================================================================
+
+const form = document.getElementById("registerForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", async function(event) {
+  event.preventDefault(); // stop page reload
+
+  // get input values
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password
+      })
+    });
+
+    // check if request successful
+    if (!response.ok) {
+      throw new Error("Failed to register");
+    }
+
+    const data = await response.json();
+
+    console.log(data);
+
+    message.textContent = "Registration successful!";
+    message.style.color = "green";
+
+  } catch (error) {
+    console.error(error);
+
+    message.textContent = "Error occurred!";
+    message.style.color = "red";
+  }
+});
