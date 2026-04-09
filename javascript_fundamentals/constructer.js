@@ -80,3 +80,67 @@ lib.addBook("Java");
 lib.removeBook("C++");
 
 lib.displayBooks();
+
+//===========================================================================
+
+// 1. Constructor for Item
+function Item(name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+// 2. Constructor for CartItem
+function CartItem(item, quantity) {
+  this.item = item;
+  this.quantity = quantity;
+
+  this.getTotal = function() {
+    return this.item.price * this.quantity;
+  };
+}
+
+// 3. Constructor for Cart
+function Cart() {
+  this.items = [];
+
+  // Add item
+  this.addItem = function(item, quantity) {
+    let cartItem = new CartItem(item, quantity);
+    this.items.push(cartItem);
+    console.log(item.name + " added x" + quantity);
+  };
+
+  // Calculate total
+  this.calculateTotal = function() {
+    let total = 0;
+
+    this.items.forEach(function(ci) {
+      total += ci.getTotal();
+    });
+
+    return total;
+  };
+
+  // Apply discount
+  this.applyDiscount = function(total) {
+    if (total > 300) {
+      return total * 0.9;
+    }
+    return total;
+  };
+
+  // Print bill
+  this.printBill = function() {
+    console.log("\n--- BILL ---");
+
+    this.items.forEach(function(ci) {
+      console.log(ci.item.name + " x" + ci.quantity);
+    });
+
+    let total = this.calculateTotal();
+    let finalAmount = this.applyDiscount(total);
+
+    console.log("Total:", total);
+    console.log("Final Amount:", finalAmount);
+  };
+}
