@@ -166,6 +166,12 @@ header .navbar {
 
  /* Responisve media query for max width 900px */
  @media screen and (max-width: 900px){
+    :root {
+--font-size-m: 1rem;
+--font-size-l: 1.3rem;
+--font-size-xl: 1.5rem;
+--font-size-xxl: 1.8rem;
+    }
     .navbar .nav-menu {
        display: block;
        position: fixed;
@@ -184,7 +190,6 @@ header .navbar {
         color: var(--dark-color);
         display: block;
         margin-top: 17px;
-        
         font-size: var(--font-size-l);
     }
  }
