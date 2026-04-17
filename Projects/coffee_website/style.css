@@ -83,7 +83,7 @@ header .navbar {
     font-weight: var(--font-weight-semibold);
 }
 
-.navbar ,.nav-menu {
+.navbar .nav-menu {
     display: flex;
     gap: 10px;
 }
@@ -99,6 +99,17 @@ header .navbar {
 .navbar .nav-menu .navlink:hover {
     color: var(--primary-color);
     background: var(--secondary-color);
+}
+
+body.show-mobile-menu header::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .navbar :where(#menu-close-button, #menu-open-button){
@@ -202,6 +213,11 @@ header .navbar {
        align-items: center;
        padding-top: 100px;
        background: var(--white-color);
+       transition: left 0.2s ease;
+    }
+
+    body.show-mobile-menu .navbar .nav-menu{
+        left: 0;
     }
 
     .navbar .nav-menu .navlink{
@@ -210,4 +226,21 @@ header .navbar {
         margin-top: 17px;
         font-size: var(--font-size-l);
     }
+ }
+
+ .hero-section .section-content {
+      gap: 50px;
+      text-align: center;
+      padding: 30px 20px 20px;
+      flex-direction: column-reverse;
+      justify-content: center;
+ }
+
+ .hero-section .hero-details :is (.subtitle, .description) {
+       max width: 100%;
+ }
+
+ .hero-section .hero-image-wrapper {
+    max-width: 270px;
+    margin-right: 0;
  }
