@@ -292,6 +292,36 @@ body.show-mobile-menu header::before {
   .menu-section .menu-list .menu-items .text {
     font-size: var(--font-size-m);
   }
+  /* Testimonials section stylinng */
+  .testimonials-section {
+    padding: 50px 0 100px;
+    background: var(--light-pink-color);
+  }
+
+  .testimonials-section .testimonials {
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials-section .testimonials .user-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    border-radius: var(--border-radius-circle);
+  }
+
+  .testimonials-section .testimonials .name{
+    margin-bottom: 16px;
+    font-size: var(--border-radius-m);
+  }
+
+  .testimonials-section .testimonials .feedback {
+    line-height: 25px;
+  }
 
  /* Responisve media query for max width 1024px */
   @media screen and (max-width: 1024px) {
@@ -305,7 +335,7 @@ body.show-mobile-menu header::before {
      }
   }
  /* Responisve media query for max width 900px */
- @media screen and (max-width: 900px){
+  @media screen and (max-width: 900px){
     :root {
 --font-size-m: 1rem;
 --font-size-l: 1.3rem;
@@ -407,7 +437,7 @@ body.show-mobile-menu header::before {
      }
   
     }
-
+/* Responsive media query code for max width 640px */
     @media screen and (max-width: 640px){
 
         .menu-section .menu-list {
@@ -417,3 +447,4 @@ body.show-mobile-menu header::before {
             width: 100%;
         }
     }
+
