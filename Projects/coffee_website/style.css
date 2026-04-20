@@ -246,6 +246,14 @@ body.show-mobile-menu header::before {
     color: var(--secondary-color);
  }
 
+ /* Responsive media query code for max width 900px */
+
+ .menu-section .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+ }
+
  /* Responisve media query for max width 900px */
  @media screen and (max-width: 900px){
     :root {
