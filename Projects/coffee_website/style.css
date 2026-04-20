@@ -246,14 +246,64 @@ body.show-mobile-menu header::before {
     color: var(--secondary-color);
  }
 
- /* Responsive media query code for max width 900px */
+ /* Menu section styling */
+
+ .menu-section  {
+    color: var(--white-color);
+    background: var(--dark-color);
+    padding: 50px 0 100px;
+ }
+
 
  .menu-section .menu-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 110px;
     align-items: center;
+    justify-content: space-between;
+ } 
+
+ .menu-section .menu-list .menu-items {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% / 3 - 110px) ; 
  }
 
+ .menu-section .menu-list .menu-items .menu-image {
+     max-width: 83%;
+     aspect-ratio: 1;
+     margin-bottom: 15px;
+     object-fit: contain;
+ }
+
+  .menu-section .menu-list .menu-items .name {
+    margin: 12px 0;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .menu-section .menu-list .menu-items .text {
+    font-size: var(--font-size-m);
+  }
+
+  .menu-section .menu-list .menu-items .text {
+    font-size: var(--font-size-m);
+  }
+
+ /* Responisve media query for max width 1024px */
+  @media screen and (max-width: 1024px) {
+
+    .menu-section .menu-list {
+        gap: 60px;
+    }
+
+     .menu-section .menu-list .menu-items {
+        width: calc(100% / 3 - 60px) 
+     }
+  }
  /* Responisve media query for max width 900px */
  @media screen and (max-width: 900px){
     :root {
@@ -262,9 +312,16 @@ body.show-mobile-menu header::before {
 --font-size-xl: 1.5rem;
 --font-size-xxl: 1.8rem;
     }
-    .navbar :where (#menu-close-button, #menu-open-button){
+
+    body.show-mobile-menu header::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    .navbar :where(#menu-close-button, #menu-open-button){
         display: block
-        font-size: var(--font-size-l);
+        var(--font-size-l)
     }
 
     .navbar #menu-close-button{
@@ -336,4 +393,27 @@ body.show-mobile-menu header::before {
        max-width: 250px;
        aspect-ratio: 1;
  }
-}
+
+ .menu-section .menu-list {
+        gap: 30px;
+    }
+
+     .menu-section .menu-list .menu-items{
+        width: calc(100% / 2 - 30px) 
+     }
+
+     .menu-section .menu-list .menu-items .menu-image {
+          max-width: 200px;
+     }
+  
+    }
+
+    @media screen and (max-width: 640px){
+
+        .menu-section .menu-list {
+        gap: 60px;
+    } 
+        .menu-section .menu-list .menu-items {
+            width: 100%;
+        }
+    }
