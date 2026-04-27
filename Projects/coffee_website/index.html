@@ -3,75 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>Coffee House | Aditya Patil </title>
-    <!-- Linking Font Awesomr for icons -->
-     <!-- Link Swiper CSS-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
- <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <meta name="description" content="Cafe Lorenzo Self-Service Kiosk - Order your favorite coffee, snacks and combos. T Nagar, Chennai.">
+    <title>Cafe Lorenzo | Self-Service Kiosk</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar section-content">
-            <a href="index.html" class="nav-logo">
-            <h2 class="logo-text">☕ Caffe Lorenzo</h2>
-           </a>
-            <ul class="nav-menu">
-    <button id="menu-close-button" class="fas fa-times"></button>
+    <div class="kiosk-app" id="kioskApp">
 
-    <li class="nav-items">
-        <a href="index.html" class="navlink">Home</a>
-    </li>
-    <li class="nav-items">
-        <a href="about.html" class="navlink">About</a>
-    </li>
-    <li class="nav-items">
-        <a href="menu.html" class="navlink">Menu</a>
-    </li>
-    <li class="nav-items">
-        <a href="testimonials.html" class="navlink">Testimonials</a>
-    </li>
-    <li class="nav-items">
-        <a href="gallery.html" class="navlink">Gallery</a>
-    </li>
-    <li class="nav-items">
-        <a href="contact.html" class="navlink">Contact</a>
-    </li>
-</ul>
-            <button id="menu-open-button" class="fas fa-bars"></button>
-        </nav>
-    </header>
+        <!-- ===== SCREEN 1: WELCOME ===== -->
+        <div class="screen welcome-screen active" id="screenWelcome">
+            <div class="particles" id="particles"></div>
+            <div class="welcome-content">
+                <div class="welcome-logo">☕</div>
+                <h1 class="welcome-title">Cafe Lorenzo</h1>
+                <p class="welcome-subtitle">Est. 2020 • Artisan Coffee</p>
+                <p class="welcome-location">T Nagar, Chennai - 600017</p>
+                <button class="welcome-btn" id="btnStartOrder" onclick="KioskApp.navigateTo('categories')">
+                    Touch to Order <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
 
-    <main>
-        <!-- Hero section -->
-        <section class="hero-section">
-            <div class="section-content">
-                <div class="hero-details">
-                    <h2 class="title">Best Coffee</h2>
-                    <h3 class="subtitle">Make your day great with our 
-                        special coffee!</h3>
-                        <p class="description">Welcome to our coffee paradise, where
-                            every bean tells a story and every cup speaks joy.</p>
-
-                            <div class="buttons">
-                                <a href="#" class="button">Order Now</a>
-                                <a href="#" class="contact-us">Contact Us</a>
-                            </div>
+        <!-- ===== SCREEN 2: CATEGORIES ===== -->
+        <div class="screen category-screen" id="screenCategories">
+            <div class="kiosk-header">
+                <div class="header-left">
+                    <button class="back-btn" onclick="KioskApp.navigateTo('welcome')">←</button>
+                    <div>
+                        <div class="header-title">Menu</div>
+                        <div class="header-brand">CAFE LORENZO</div>
+                    </div>
                 </div>
-                <div class="hero-image-wrapper">
-                    <img src="assets.img/coffee-hero-section.png" alt="Hero" class="hero-image">
+                <button class="cart-btn" onclick="KioskApp.navigateTo('cart')">
+                    🛒 <span class="cart-badge" id="catCartBadge">0</span>
+                </button>
+            </div>
+            <div class="category-content">
+                <h2 class="section-heading">What are you craving?</h2>
+                <p class="section-sub">Choose a category to explore</p>
+                <div class="category-grid stagger" id="categoryGrid">
+                    <!-- Rendered by JS -->
+                </div>
+
+                <div class="top-selling-section">
+                    <h2 class="section-heading" style="font-size:1.3rem;">🔥 Top Selling</h2>
+                    <p class="section-sub">Our customers love these!</p>
+                    <div class="top-selling-scroll" id="topSellingScroll">
+                        <!-- Rendered by JS -->
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-         
-        
-     <!-- Linking Swiper script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <!-- ===== SCREEN 3: ITEMS ===== -->
+        <div class="screen items-screen" id="screenItems">
+            <div class="kiosk-header">
+                <div class="header-left">
+                    <button class="back-btn" onclick="KioskApp.navigateTo('categories')">←</button>
+                    <div>
+                        <div class="header-title" id="itemsTitle">Category</div>
+                        <div class="header-brand">CAFE LORENZO</div>
+                    </div>
+                </div>
+                <button class="cart-btn" onclick="KioskApp.navigateTo('cart')">
+                    🛒 <span class="cart-badge" id="itemsCartBadge">0</span>
+                </button>
+            </div>
 
-    <!-- Linking custom script -->
+            <!-- Combo Banner -->
+            <div class="combo-banner" id="comboBanner" onclick="KioskApp.showCategory('combos')">
+                <span class="combo-icon">🍔☕</span>
+                <div class="combo-info">
+                    <h3>Recommended Combos</h3>
+                    <p>Save more with our special combos!</p>
+                </div>
+                <span class="combo-savings">Save ₹50+</span>
+            </div>
+
+            <div class="items-content">
+                <div class="items-grid stagger" id="itemsGrid">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+
+            <div class="bottom-bar" id="bottomBar" style="display:none;">
+                <div class="bb-info">
+                    <span id="bbItemCount">0</span> items • <strong id="bbTotal">₹0</strong>
+                </div>
+                <button class="view-cart-btn" onclick="KioskApp.navigateTo('cart')">
+                    View Cart →
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== SCREEN 4: CART ===== -->
+        <div class="screen cart-screen" id="screenCart">
+            <div class="kiosk-header">
+                <div class="header-left">
+                    <button class="back-btn" onclick="KioskApp.navigateTo('categories')">←</button>
+                    <div>
+                        <div class="header-title">Your Cart</div>
+                        <div class="header-brand">CAFE LORENZO</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-content" id="cartContent">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display:none;">
+                <div class="cf-total">
+                    <span>Grand Total (incl. GST)</span>
+                    <span id="cfGrandTotal">₹0</span>
+                </div>
+                <button class="place-order-btn" id="placeOrderBtn" onclick="KioskApp.placeOrder()">
+                    Place Order
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== SCREEN 5: BILL ===== -->
+        <div class="screen bill-screen" id="screenBill">
+            <div class="kiosk-header">
+                <div class="header-left">
+                    <div>
+                        <div class="header-title">Order Confirmed ✓</div>
+                        <div class="header-brand">CAFE LORENZO</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bill-receipt" id="billReceipt">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="bill-actions">
+                <button class="bill-action-btn print" onclick="window.print()">🖨 Print</button>
+                <button class="bill-action-btn new-order" onclick="KioskApp.newOrder()">New Order</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Main Script with ALL OOP Concepts -->
     <script src="script.js"></script>
 </body>
 </html>
