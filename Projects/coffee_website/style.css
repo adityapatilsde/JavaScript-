@@ -5,9 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* === DESIGN TOKENS === */
+/* === design tokens
+ === */
 :root {
-  /* Primary Palette */
+  /* primary plate */
   --bg-dark: #0d0907;
   --bg-deep: #1a110d;
   --bg-card: #241a14;
