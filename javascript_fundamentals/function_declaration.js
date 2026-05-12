@@ -127,3 +127,128 @@ let emp2 = createEmployee("Anita", 70000, 12);
 displayEmployee(emp1);
 console.log("-------------------");
 displayEmployee(emp2);
+
+//=========================================================
+
+// Student Management System
+
+let students = []
+
+// add student
+function addStudent(id,name,marks)
+{
+    let student = {
+        id:id,
+        name:name,
+        marks:marks
+    }
+
+    students.push(student)
+
+    console.log(name + " added")
+}
+
+// show students
+function showStudents()
+{
+    console.log("Student List")
+
+    for(let i=0;i<students.length;i++)
+    {
+        console.log(
+            students[i].id + " " +
+            students[i].name + " " +
+            students[i].marks
+        )
+    }
+}
+
+// average marks
+function averageMarks()
+{
+    let total = 0
+
+    for(let i=0;i<students.length;i++)
+    {
+        total = total + students[i].marks
+    }
+
+    let avg = total / students.length
+
+    console.log("Average Marks = " + avg)
+}
+
+// topper
+function topper()
+{
+    let top = students[0]
+
+    for(let i=0;i<students.length;i++)
+    {
+        if(students[i].marks > top.marks)
+        {
+            top = students[i]
+        }
+    }
+
+    console.log("Topper is " + top.name)
+}
+
+// search student
+function searchStudent(id)
+{
+    for(let i=0;i<students.length;i++)
+    {
+        if(students[i].id == id)
+        {
+            console.log("Student Found")
+            console.log(students[i])
+        }
+    }
+}
+
+// update marks
+function updateMarks(id,newMarks)
+{
+    for(let i=0;i<students.length;i++)
+    {
+        if(students[i].id == id)
+        {
+            students[i].marks = newMarks
+            console.log("Marks Updated")
+        }
+    }
+}
+
+// delete student
+function deleteStudent(id)
+{
+    students = students.filter(function(student){
+        return student.id != id
+    })
+
+    console.log("Student Deleted")
+}
+
+
+// main program
+
+addStudent(1,"Aditya",80)
+addStudent(2,"Rahul",75)
+addStudent(3,"Priya",95)
+
+showStudents()
+
+averageMarks()
+
+topper()
+
+searchStudent(2)
+
+updateMarks(1,90)
+
+showStudents()
+
+deleteStudent(3)
+
+showStudents()
